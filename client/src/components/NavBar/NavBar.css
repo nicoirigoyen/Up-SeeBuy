@@ -1,0 +1,67 @@
+.list{
+    width: 100vw;
+    display: flex;
+    margin:auto;
+    list-style: none;
+    padding: 1.5vw;
+
+}
+.list li{
+    margin:10px;
+    padding: 1vw;
+    color: #000000;
+    text-align: center;
+    padding: 1vw;
+    font-weight: bold;
+    
+    
+}
+.list li a{
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+    
+    
+}
+.list li a:hover{
+    color: rgb(104, 104, 104);
+}
+
+ .titulo{
+    left: 50px;
+    position: absolute;
+    text-decoration: underline;
+    font-family:Playball;
+    text-align: start;
+    display:contents;
+    
+    color: #fff;
+    text-shadow: #fff 0 0 10px;
+    text-transform: uppercase; 
+} 
+.titulo a{
+    font-size: 5vw;
+}
+.countainerSelectt{
+    display: flex;
+    
+
+}
+.titulo:hover,
+.titulo.active {
+   
+    color: #3cf9ff;
+    transition: 100ms ease-in-out;
+} 
+.navbarItem{
+    
+    position: absolute;
+    right: 8vw;
+    font-size: 1.8vw;
+    text-decoration: underline;
+}
+.navbarItem2{
+    position: absolute;
+    right: 14vw;
+    font-size: 1.8vw;
+    text-decoration: underline;
+}
