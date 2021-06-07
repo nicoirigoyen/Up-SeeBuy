@@ -5,7 +5,7 @@
 }
 .foundLanding{
     height: 100vh;
-    background-color: brown;
+    background-image: url('../../img/fondo\ upsebbuy.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -30,22 +30,23 @@
     padding: 1vw;
 }
 .irAlSitio{
-    border: 1px solid black;
+    transition-duration: 0.4s;
+    border: 1px solid rgb(255, 255, 255);
     align-items: center;
-    background-color: #a539399d;
     width: 8vw;
     height: 4vw;
     border-radius: 1.5vw;
     justify-content: center;
-    font-family: Playfair Display SC;
+    font-family:Arial;
     margin:auto;
     display: flex;
     text-decoration: none;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin-top: 30%;
     color: black;
 }
 .irAlSitio:hover{
-    background-color: #a53939;
+    background-color: #4CAF50;
+    color: white;
 }
