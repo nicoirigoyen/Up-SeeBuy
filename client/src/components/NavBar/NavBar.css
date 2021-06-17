@@ -1,0 +1,78 @@
+.navbar{
+    background-color: #45a048;
+    width: 100%;
+}
+
+.list{
+    width: 100vw;
+    display: flex;
+    margin:auto;
+    list-style: none;
+    padding: 1.5vw;
+    
+}
+.list li{
+    margin:10px;
+    padding: 1vw;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+    justify-content: space-between;
+    
+    
+}
+.ingresar{
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+}
+.registrarse{
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+    margin-right: 2vw;
+   
+    
+}
+.registrarse:hover{
+    color: rgb(255, 255, 255);
+}
+.ingresar:hover{
+    color: rgb(255, 255, 255);
+}
+
+ .titulo{
+    left: 50px;
+    position: absolute;
+    text-decoration: underline;
+    font-family:Playball;
+    text-align: start;
+    display:contents;
+    font-size: 5vw;
+    color: #fff;
+    text-shadow: #fff 0 0 10px;
+    text-transform: uppercase; 
+} 
+
+.countainerSelectt{
+    display: flex;
+    
+
+}
+.titulo:hover,
+.titulo.active {
+   
+    color: #4d4e4d;
+    transition: 100ms ease-in-out;
+} 
+.navbarItem{
+    
+    position: absolute;
+    right: 8vw;
+    font-size: 1.8vw;
+    text-decoration: underline;
+}
+.navbarItem2{
+    position: absolute;
+    right: 14vw;
+    font-size: 1.8vw;
+    text-decoration: underline;
+}
