@@ -10,6 +10,9 @@ module.exports = (sequelize) => {
     //   type:DataTypes.STRING(3),
     //   primaryKey: true
     // },
+    id:{
+        //ARMAR EL ID Y CONECTAR CON EL MOELO PRODCUTO
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
