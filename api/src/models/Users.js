@@ -6,10 +6,13 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
 
   sequelize.define('users',{
-    // id: {
-    //   type:DataTypes.STRING(3),
-    //   primaryKey: true
-    // },
+
+    id: { 
+      type: DataTypes.UUID,
+      allowNull: false,
+      unique: true,
+      primaryKey: true
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
