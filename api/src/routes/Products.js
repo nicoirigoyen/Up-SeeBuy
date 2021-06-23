@@ -7,9 +7,9 @@ const { request } = require("express");
 const { Op } = require("sequelize");
 
 
-server.get("/products", async( req,res)=>{
+server.get("/", async( req,res)=>{
     const  data  = await Products.findAll();
-    
+    console.log(data)
     try {
         return res.status(200).json(
             await Products.findAll({
