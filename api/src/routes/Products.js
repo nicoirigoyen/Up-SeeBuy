@@ -11,38 +11,44 @@ server.get("/products", async( req,res)=>{
     const  data  = await Products.findAll();
     
     try {
-
-        if(data.length !== 0 ){
-            res.status(200).json(data);
-        }
+        return res.status(200).json(
+            await Products.findAll({
+              attributes: {
+                exclude: ["createdAt", "updatedAt"],
+              },
+            })
+          );
+        // if(data.length !== 0 ){
+        //     return res.status(200).json(data);
+        // }
     } catch (error) {
         res.status(400).json({ msg: error.message });
     }
 
-})
+});
 
 
 // [ ] __POST /user/register:
 //   - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de usuario por body
 //   - Crea un nuevo usuario
-// server.post("/prodcuts", async (req, res)=>{
-//     var { name, image, category, description, Singin } = req.body;
-    
-//     let actividad = await Activities.create({
-//         name,
-//         image,
-//         category,
-//         description
-//     })
-//     Singin.forEach(async (pais) => {
-//         let singin = await Singin.findOne({
-//             where: { id: pais }
-//         })
-//         await actividad.addCountry(country)
+server.post("/create", async (req, res)=>{
+    var { name, image, price, category, description, state } = req.body;
+    try { 
+         await Products.create({
+            name,
+            image,
+            price,
+            category,
+            description,
+            state
+        })
+       
+        res.status(200).send('Succesful!')
         
-//     })
-//     res.status(201).send('Succesful!')
-// });
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+});
 
 
 
