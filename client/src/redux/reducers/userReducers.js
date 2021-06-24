@@ -4,7 +4,7 @@ const initialState = {
 
 }
 
-export function rootReducer (state = initialState, action) {
+export const userReducers = (state = initialState, action) => {
     switch(action.type){
         case 'GET_USER':
             return {...state, user: action.payload}

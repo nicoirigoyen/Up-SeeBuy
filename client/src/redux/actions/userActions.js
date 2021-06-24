@@ -1,16 +1,15 @@
 import axios from 'axios'
-import { BASE_URL, GET_COUNTRIES, FILTER_URL } from '../const'
+import { BASE_URL,  } from '../const'
 
 
 export const register = (form) => {
-    console.log('ENTRO A LA ACCION!')
+
     return async () => {
         await axios.post(`${BASE_URL}/singin/register`, Object.assign(form));
     }
 }
 export const singin = (email, password) => {
-    console.log(email)
-    console.log(password)
+
     return async (dispatch) => {
         dispatch({
             type: 'GET_USER_REQUEST'})

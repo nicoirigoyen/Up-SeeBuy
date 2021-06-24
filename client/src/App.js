@@ -11,7 +11,7 @@ import Singin from './components/Singin/Singin';
 
 // RUTAS
 
-export function App(){
+const App = () => {
   return (
     <div>
   <BrowserRouter>

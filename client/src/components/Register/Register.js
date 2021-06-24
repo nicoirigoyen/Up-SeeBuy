@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { register } from '../../redux/actions/index'
+import { register } from '../../redux/actions/userActions';
 import './Register.css'
 const Register = () => {
     const dispatch = useDispatch();
