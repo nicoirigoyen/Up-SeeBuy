@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { singin } from '../../redux/actions/index'
+import { singin } from '../../redux/actions/userActions';
 import './Singin.css'
 
 //MANEJAR ESTADO! AL IR COMPLETANDO EL FORM

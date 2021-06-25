@@ -8,8 +8,8 @@ const { Op } = require("sequelize");
 
 
 server.get("/", async( req,res)=>{
-    const  data  = await Products.findAll();
-    console.log(data)
+    // const  data  = await Products.findAll();
+    
     try {
         return res.status(200).json(
             await Products.findAll({
