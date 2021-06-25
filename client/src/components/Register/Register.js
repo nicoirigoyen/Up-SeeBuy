@@ -13,7 +13,7 @@ const Register = () => {
         password: '',
     })
     
-    console.log(users)
+  
     // useEffect(() => {
     //     dispatch(getCountries())
     //     setLoading(true)

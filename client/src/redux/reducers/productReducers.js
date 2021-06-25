@@ -1,9 +1,9 @@
 const initialState = {
-    product: []
+    product: [],
 }
 
 
-export const productReducers = (state = initialState, action) => {
+export function productReducers (state = initialState, action) {
 
     switch(action.type){
         case 'GET_PRODUCTS':
