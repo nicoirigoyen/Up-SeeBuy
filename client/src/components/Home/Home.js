@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import CardProduct from '../Card/CardProduct'
 import {getProducts} from '../../redux/actions/productActions'
 import './Home.css'
 
@@ -13,13 +14,13 @@ const Home = () => {
     dispatch(getProducts());
     
   }, []);
-  console.log(product)
+ 
 
     return (
       <div className='ContainerHome'>
-        <h1>Productos Destacados</h1>
+
           {product.product.map( p =>{
-           return <h3>{p.name}</h3>})}
+           return <CardProduct product={p} />})}
       </div>
     )
   };
