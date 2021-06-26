@@ -3,7 +3,8 @@ import theme from '../utils/theme';
 
 export const useStyles = makeStyles({
   root: {
-    maxWidth: '21.875em',
+    width: '20.875em',
+    // height: '27.875em',
     borderRadius: 15,
     margin: '1.875em',
     marginBottom: '1.2em',
@@ -94,10 +95,17 @@ export const useStyles = makeStyles({
     padding: 0,
     marginTop: '0.75em',
   },
+  productPrice: {
+    // display: 'flex',
+    // justifyContent: 'center',
+    // padding: 0,
+    // marginTop: '10%',
+  },
   infoButton: {
     backgroundColor: 'transparent',
     border: 'none',
     boxShadow: 'none',
+    marginTop: '17rem',
     textTransform: 'none',
     fontSize: 13,
     padding: '0.3125em',
