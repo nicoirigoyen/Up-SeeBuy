@@ -19,7 +19,7 @@ export default function CardProdcut({ product }) {
 
     return(
       <Card className={classes.root}>
-      <CardActionArea onClick={() => history.push('/product/')}>
+      <CardActionArea onClick={() => history.push(`${product.id}`)}>
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
@@ -35,7 +35,7 @@ export default function CardProdcut({ product }) {
             {product.description}
           </Typography>
           <Typography variant="body2" color="primary" component="p">
-            {product.price}
+            $ {product.price}
           </Typography>
         </CardContent>
         
