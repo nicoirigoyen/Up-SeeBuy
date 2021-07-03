@@ -8,7 +8,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const product = useSelector((store) => store.productReducers);
-  
+  console.log(product.product)
 
   useEffect( ()  => {
     dispatch(getProducts());
@@ -18,7 +18,6 @@ const Home = () => {
 
     return (
       <div className='ContainerHome'>
-
           {product.product.map( p =>{
            return <CardProduct product={p} />})}
       </div>

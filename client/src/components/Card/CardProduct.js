@@ -22,10 +22,10 @@ export default function CardProdcut({ product }) {
       <CardActionArea onClick={() => history.push(`${product.id}`)}>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
+          alt="Producto"
           height="140"
           image="https://www.tec.com.pe/wp-content/uploads/2021/04/adidas-lego-5-1024x719-1.jpg"
-          title="Contemplative Reptile"
+          title="Prodcuto"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
