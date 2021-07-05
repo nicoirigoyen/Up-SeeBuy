@@ -13,14 +13,6 @@ const Register = () => {
         password: '',
     })
     
-  
-    // useEffect(() => {
-    //     dispatch(getCountries())
-    //     setLoading(true)
-    //   }, []);
-
-   
-      
 
 
     const handleInputChange = (event) => {
