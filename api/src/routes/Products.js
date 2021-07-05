@@ -2,25 +2,54 @@ require("dotenv").config();
 var express = require("express");
 const server = express.Router();
 const axios = require("axios");
-const { Products } = require("../db.js");
+const { Products, Users } = require("../db.js");
 const { request } = require("express");
 const { Op } = require("sequelize");
 
+server.get("/:id", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const product = await Products.findByPk(id, {
+            include: Users,
+            attributes: {
+                exclude: ["createdAt", "updatedAt","userId"],
+              },
+          }) 
+    
+        res.status(200).json(product);
+    } catch (error) {
+        res.status(400).json({ msg: error.message });
+    }
+      
+  });
 
 server.get("/", async( req,res)=>{
-    // const  data  = await Products.findAll();
-    
+    const {page} = req.query;
+    const pag = page * 5
+    const obj = pag? {offset: obj, limit: 30} : {limit: 30}
+    var { name } = req.query;
+  if (name ) {
+    try {
+      return res.status(200).json(
+        await Products.findAll({
+          where: { name: { [Op.iLike]: `%${name}%` } },
+          attributes: {
+            exclude: ["createdAt", "updatedAt","userId"],
+          },
+        })
+      );
+    } catch (error) {
+      res.status(400).json({ msg: error.message });
+    }
+  } 
     try {
         return res.status(200).json(
             await Products.findAll({
               attributes: {
-                exclude: ["createdAt", "updatedAt"],
+                exclude: ["createdAt", "updatedAt","userId"],
               },
             })
           );
-        // if(data.length !== 0 ){
-        //     return res.status(200).json(data);
-        // }
     } catch (error) {
         res.status(400).json({ msg: error.message });
     }
@@ -28,9 +57,6 @@ server.get("/", async( req,res)=>{
 });
 
 
-// [ ] __POST /user/register:
-//   - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de usuario por body
-//   - Crea un nuevo usuario
 server.post("/create", async (req, res)=>{
     var { name, image, price, category, description, state } = req.body;
     try { 
