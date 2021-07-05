@@ -4,10 +4,13 @@ import theme from '../utils/theme';
 export const createStyles = makeStyles({
   root: {
     flexGrow: 1,
+    
+    
   },
   navbar: {
     backgroundColor: theme.palette.primary.main,
     flexGrow: 1,
+    backgroundColor: 'black'
   },
   ctnUser: {
     display: 'flex',
@@ -31,9 +34,30 @@ export const createStyles = makeStyles({
     width: '9.375rem',
     height: '3.125rem',
   },
-  titulo: {
-    fontSize: '26px',
-    fontFamily: 'arial',
-    color: 'white'
+  tittle: {
+    fontSize: '34px',
+    fontFamily: 'open-sans',
+    color: 'white',
+    textDecoration: 'underline black'
+  },
+  containerLogin: {
+    display:'flex',
+    flexDirection: 'row',
+    marginLeft: '40vh'
+  },
+  singin: {
+    fontSize: '18px',
+    fontFamily: 'Arial',
+    color: 'white',
+    marginRight: '1vw',
+    textDecoration: 'underline black',
+  },
+ 
+  register: {
+    fontSize: '18px',
+    fontFamily: 'Arial',
+    color: 'white',
+    marginRight: '2vw',
+    textDecoration: 'underline black'
   },
 });

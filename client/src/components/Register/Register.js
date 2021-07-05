@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { register } from '../../redux/actions/userActions';
-import './Register.css'
-const Register = () => {
+import { Formik, Form, Field } from 'formik';
+import swal from 'sweetalert2'
+import { TextField, Select, CheckboxWithLabel } from 'formik-material-ui';
+import {
+    Grid,
+    InputAdornment,
+    Typography,
+    Button,
+    MenuItem,
+    InputLabel,
+    FormControl,
+  } from '@material-ui/core';
+
+import { useStyles } from './styles';
+
+
+const Register = () =>{
+    const classes = useStyles();
     const dispatch = useDispatch();
-    const users = useSelector(state => state.users)
-    const [loading, setLoading] = useState(false)
-    const [form, setForm] = useState({
+       const [form, setForm] = useState({
         email: '',
         name: '',
         lastname: '',
         password: '',
     })
     
-  
-    // useEffect(() => {
-    //     dispatch(getCountries())
-    //     setLoading(true)
-    //   }, []);
-
-   
-      
-
 
     const handleInputChange = (event) => {
         setForm({
@@ -30,42 +35,98 @@ const Register = () => {
         })
     };
 
-    
-    const handleSubmit = (event) => {
-        console.log(users)
-        event.preventDefault();
-        dispatch(register(form))
-        .then(()=>alert('Bienvenido'))
-        event.target.value = ""; 
-    };
-return (
-    <div className='fondo'>
-    <form className='formRegister' onSubmit={handleSubmit}>
-        <span className='tittle'>Registrarse</span>
-        <div className='inputs'>
-            <div className='name'>
-                <label>Nombre:</label>
-                <input className='inputName' autoFocus type='text' name='name' onChange={handleInputChange} required />
-            </div>
-            <div className='lastname'>
-                <label>Apellido:</label>
-                <input className='inputLastname' type='text' name='lastname' onChange={handleInputChange} required />
-            </div>
-            <div className='email'>
-                <label>Email:</label>
-                <input className='inputEmail' type='text' name='email' onChange={handleInputChange} required />
-            </div>
-            <div className='password'>
-                <label>Contraseña: </label>
-                <input className='inputPassword' type='password' name='password' onChange={handleInputChange} required />
-            </div>
-            <button className='btnRegister' onClick={handleSubmit}>Registrarse</button>
-        </div>         
-    </form>
-    
-     
+    function handleSubmit(e){
+    e.preventDefault();
+    dispatch(register(form))
+    if(form)
+    {swal.fire("Bienvenido!", "Clickea el boton para continuar!", "success")}
+    else{swal.fire('Oops...', 'Something went wrong!', 'error')}
+    setForm('');
 
-</div>
+    }
+
+    return(
+        <Formik
+        // initialValues={form}
+        enableReinitialize
+        //   validationSchema={validationSchema}
+        onSubmit={handleSubmit}>
+      {
+        <Grid container className={classes.root}>
+            
+            <Form className={classes.root}>
+            <Typography className={classes.title}>Completa tus datos</Typography>
+            <Grid container spacing={2} className={classes.gridContainer}>
+            <Grid>
+                <FormControl>
+                    <Field
+                    component={TextField}
+                    onChange={handleInputChange}
+                    name="name"
+                    label="Nombre"
+                    variant="outlined"
+                    className={classes.input}
+                    required
+                    />
+                </FormControl>
+                </Grid>
+
+                <Grid>
+                <FormControl>
+                    <Field
+                    component={TextField}
+                    onChange={handleInputChange}
+                    name="lastname"
+                    label="Apellido"
+                    variant="outlined"
+                    className={classes.input}
+                    required
+                    />
+                </FormControl>
+                </Grid>
+
+                <Grid>
+                <FormControl>
+                    <Field
+                    component={TextField}
+                    onChange={handleInputChange}
+                    name="email"
+                    label="Correo Electronico"
+                    variant="outlined"
+                    className={classes.input}
+                    required
+                    />
+                </FormControl>
+                </Grid>
+
+                <Grid>
+                <FormControl>
+                    <Field
+                        component={TextField}
+                        onChange={handleInputChange}
+                        name="password"
+                        label="Contraseña"
+                        type="password"
+                        variant="outlined"
+                        className={classes.input}
+                        required
+                    />
+                    </FormControl>
+                </Grid>
+
+      
+            
+        </Grid>
+        <Grid className={classes.containerButton}>
+        <Button className={classes.button} onClick={handleSubmit} variant="contained" color="secondary">
+              Enviar
+            </Button>
+        </Grid>
+        </Form>
+     </Grid>
+
+      } 
+
+        </Formik>
 )};
-
 export default Register;

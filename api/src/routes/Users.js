@@ -61,7 +61,6 @@ server.post("/register", async (req, res) => {
 // });
 
 server.post("/singin", async (req, res) => {
-  console.log(req.body)
   let { email, password } = req.body;
   if(email && password){
     const existe = await Users.findOne({
