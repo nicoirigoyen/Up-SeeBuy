@@ -74,6 +74,7 @@ export default function CardDetail() {
   };
 
   let {id} = useParams();
+  
   const [loading,setloading] = useState(false);
   const product = useSelector((store) => store.productReducers);
   const dispatch = useDispatch();
@@ -104,7 +105,7 @@ export default function CardDetail() {
       />
       <CardMedia
         className={classes.media}
-        image={product.product.image}
+        image="https://www.tec.com.pe/wp-content/uploads/2021/04/adidas-lego-5-1024x719-1.jpg"
         title={product.product.name}
         
       />

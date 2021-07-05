@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { AppBar, Toolbar, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Menu, MenuItem, Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { Container } from '@material-ui/core';
 
@@ -37,8 +37,14 @@ export default function NavBar() {
           <Link to="/singin" className={classes.singin}>
             <Typography className={classes.singin} >Ingresar</Typography>
           </Link>
+        
+          
           <Link to="/register" className={classes.register}>
             <Typography className={classes.register} >Registrarse</Typography>
+          </Link>
+
+          <Link to="/post" >
+          <Button variant="contained" color="primary" component="span">Publicar</Button>
           </Link>
                
                 

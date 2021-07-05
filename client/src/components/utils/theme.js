@@ -20,6 +20,12 @@ const theme = createMuiTheme({
       light: '#F9F9F9',
       contrastText: '#E3EFE4',
     },
+    uppsebuy: {
+      main: '#28B463',
+      dark: '#28B463',
+      light: '#28B463',
+      contrastText: '#28B463',
+    }
   },
   overrides: {
     MuiButton: {

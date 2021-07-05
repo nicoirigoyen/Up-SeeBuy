@@ -14,6 +14,7 @@ export function productReducers (state = initialState, action) {
         //     };
         case 'GET_PRODUCTS':
             return { ...state, product: action.payload };
+            
 
         case 'GET_NAME_PRODUCT':
             return {...state, productName: action.payload};

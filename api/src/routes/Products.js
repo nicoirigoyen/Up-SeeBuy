@@ -9,6 +9,7 @@ const { Op } = require("sequelize");
 server.get("/:id", async (req, res, next) => {
     const { id } = req.params;
     try {
+
         const product = await Products.findByPk(id, {
             include: Users,
             attributes: {

@@ -70,10 +70,17 @@ export const getNameProduct = (name) => {
     }
 };
 
-export const getProductById = (id) => {
-    
+export const getProductById = (id) => { 
     return async (dispatch) => {
         const request = await axios.get(`${BASE_URL}/products/${id}`)
         dispatch({type: 'GET_PRODUCTS', payload: request.data})
+        
         }
+}
+
+export const postProduct = (form) => {
+
+    return async () => {
+        await axios.post(`${BASE_URL}/products/create`, Object.assign(form))
+    }
 }

@@ -19,11 +19,11 @@ export default function CardProdcut({ product }) {
     const classes = useStyles();
     const history = useHistory();
 
-
     
     return(
       <Card className={classes.root}>
       <CardActionArea onClick={() => history.push(`/products/${product.id}`)}>
+        
         <CardMedia
           component="img"
           alt="Producto"

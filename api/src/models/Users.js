@@ -7,17 +7,10 @@ module.exports = (sequelize) => {
 
   sequelize.define('users',{
 
-    id: { 
-      type: DataTypes.UUID,
-      allowNull: false,
-      unique: true,
-      primaryKey: true
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      primaryKey: true,
       validate: {
         isEmail: true
     }
@@ -40,21 +33,6 @@ return bcrypt.hash(password, bcrypt.genSaltSync(8));
 validPassword(password) {
 return bcrypt.compare(password, this.password);
 }},
-  //   password: {
-  //     password: DataTypes.STRING,
-  //     allowNull: false,
-  //     unique: true,
-      
-  // }, 
-  //   freezeTableName: true,
-  //   instanceMethods: {
-  //       generateHash(password) {
-  //           return bcrypt.hash(password, bcrypt.genSaltSync(8));
-  //       },
-  //       validPassword(password) {
-  //           return bcrypt.compare(password, this.password);
-  //       }
-  //   }
   });
 
 };

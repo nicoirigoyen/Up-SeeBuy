@@ -7,12 +7,7 @@ const { DataTypes, UUID } = require('sequelize');
 module.exports = (sequelize) => {
 
   sequelize.define('products', {
-    id: { 
-      type: DataTypes.INTEGER(),
-      allowNull: false,
-      unique: true,
-      primaryKey: true
-    },
+
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -26,7 +21,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     category: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM('Remeras', 'Camperas','Zapatillas','Accesorios','Hogar', 'Jardineria'),
       allowNull: false,
     },
     description: {
@@ -36,9 +31,7 @@ module.exports = (sequelize) => {
     state: {
       type: DataTypes.ENUM('Expired','Active')
     },
-    // userId: {
-    //   type: DataTypes.STRING,
-    // }
+
 
 
   });
